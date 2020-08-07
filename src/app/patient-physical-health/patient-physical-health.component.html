@@ -1,0 +1,106 @@
+<mat-card style="padding-top: 3vh;" class="mat-elevation-z4">
+    <h1 style="text-align: center;">Your Physical and Health Report</h1>
+    <h4 style="text-align: center;">Please provide accurate information for better analysis of your health quotient</h4>
+    <form [formGroup]="physicalAndHealthForm" [style.fontSize.px]="12">
+        <table style="text-align: center;">
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Height</mat-label>
+                        <input type="number" matInput placeholder="in cm" formControlName="height">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Weight</mat-label>
+                        <input type="number" matInput placeholder="in kg" formControlName="weight">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Travel in last 15 days</mat-label>
+                        <mat-select formControlName="travelIn15Days">
+                            <mat-option value="true">
+                                True
+                            </mat-option>
+                            <mat-option value="false">
+                                False
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <div formArrayName="travelHistory">
+            <div *ngFor="let travel of physicalAndHealthForm.get('travelHistory')['controls']; let i=index">
+                <div class="form-group" [formGroupName]="i">
+                    <h3 style="text-align: left;">Travel {{i+1}}</h3> 
+                    
+                    <mat-form-field appearance="outline">  
+                        <mat-label>Date Of Travel</mat-label>                                    
+                        <input formControlName="dateOfTravel" type="date" matInput />                                     
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="outline">  
+                        <mat-label>From Place</mat-label>                                    
+                        <input formControlName="fromPlace" matInput />                                     
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">  
+                        <mat-label>To Place</mat-label>                                    
+                        <input formControlName="toPlace" matInput />                                     
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">  
+                        <mat-label>Stay Duration In Days</mat-label>                                    
+                        <input formControlName="stayDurationInDay" type="number" matInput />                                     
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin: 0; padding-bottom: 2rem; text-align: center;">
+            <button type="button" mat-raised-button class="btn btn-primary"  
+            *ngIf="physicalAndHealthForm.get('travelHistory')['controls'].length>1" 
+            (click)="removeTravel(physicalAndHealthForm.get('travelHistory')['controls'].length-1)" color="warn">Remove Travel</button>
+            <button type="button" mat-raised-button class="btn btn-primary" color="primary" (click)="addTravel()">Add Travel</button>
+        </div>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Quarantine In Last 15 Days</mat-label>
+            <input type="number" matInput placeholder="in kg" formControlName="quarantineIn15Days">
+        </mat-form-field>
+
+        <mat-checkbox (click)="symptomStatusToggle()"><h3 style="margin: 0 0 0 0 !important;">Any Symptoms</h3></mat-checkbox>
+
+        <h3 *ngIf="symptomStatus">Symptoms</h3>
+        <div *ngIf="symptomStatus">
+            <li *ngFor="let check of symptomsList"><mat-checkbox (change)="onSymptomsChange(check.id)" [checked]="check.checked" >{{check.symptom}}</mat-checkbox></li>
+        </div>
+    
+        <h3 style="margin-top: 1rem !important;">Existing Disease</h3>
+        <div>
+            <li *ngFor="let check of existingDiseaseList"><mat-checkbox (change)="onExistingDiseaseChange(check.id)" [checked]="check.checked" [disabled]="isDisabled">{{check.disease}}</mat-checkbox></li>
+            <li><mat-checkbox (change)="onExistingDiseaseChangeNone()">None</mat-checkbox></li>
+        </div>
+    
+        <h3 style="margin-top: 1rem !important;">Medical History</h3>
+        <div>
+            <li *ngFor="let medical of medicalHistoryList"><mat-checkbox (change)="onMedicalHistoryChange(medical.id)" [checked]="medical.checked">{{medical.history}}</mat-checkbox></li>
+        </div>
+
+        <h3 style="margin-top: 1rem !important;">Habits</h3>
+        <div>
+            <li *ngFor="let habits of habitsList"><mat-checkbox (change)="onHabitsChange(habits.id)" [checked]="habits.checked">{{habits.habit}}</mat-checkbox></li>
+        </div>
+
+        <mat-checkbox (click)="medicalInsuranceToggle()"><h3 style="margin: 1rem 0 0 0 !important;">Medical Insurance</h3>Select if you have Medical Insurance</mat-checkbox>
+        <br>
+        <mat-checkbox (click)="agreementToggle()"><h3 style="margin: 1rem 0 0 0 !important;">I AGREE</h3> The information i have provided is correct</mat-checkbox>
+
+        <div style="margin: 0; padding-bottom: 2rem; text-align: center;">
+            <button type="submit" mat-raised-button color="primary" [style.fontSize.px]="16" (click)="registerHealthAndPhysicalData(physicalAndHealthForm.value)" *ngIf="agreementStatus">Register</button>
+            <button type="reset" mat-raised-button color="accent" [style.fontSize.px]="16">Cancel</button> 
+        </div>
+    </form>
+</mat-card>

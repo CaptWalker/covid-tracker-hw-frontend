@@ -1,0 +1,55 @@
+.mat-card{
+    margin-top: 10vh;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 5vh;
+    padding-top: 5vh;
+    padding-bottom: 7vh;
+}
+
+.mat-form-field{
+    width: 100%;
+    padding-top: 0vh;
+}
+
+li{
+    display: inline; 
+    padding-right: 1vh;
+}
+
+button{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+@media (max-width: 1300px){
+    tr{
+        display: grid;
+        width: 100%;
+    }
+
+    table{
+        display: block;
+    }
+}
+
+@media (max-width: 755px){
+    .mat-card{
+        margin-top: 6vh;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    li{
+        display: inline; 
+        padding-right: 1vh;
+    }
+}
+
+@media (max-width: 420px){
+    .mat-card{    
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-top: 5vh;
+    }
+}

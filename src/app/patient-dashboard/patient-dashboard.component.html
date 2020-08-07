@@ -1,0 +1,112 @@
+<!-- <nav style="padding-top: 2%;">
+  <button mat-button color="accent" [style.fontSize.px]="18">Dashboard</button>
+  <button mat-button color="primary">Primary</button>
+  <button mat-button color="primary">Primary</button>
+</nav> -->
+
+<mat-tab-group>
+  <mat-tab label="Dashboard">
+    <ng-template matTabContent>
+      <app-patient-dashboard-data></app-patient-dashboard-data>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Physical and Health Status">
+    <ng-template matTabContent>
+      <app-patient-physical-health></app-patient-physical-health>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Covid Test">
+    <ng-template matTabContent>
+      Content 3 - Loaded:
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
+
+<!-- <div class="grid-container">
+  
+  <mat-grid-list cols="3" rowHeight="1:.7">
+    
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-card class="dashboard-card">
+    
+        <mat-card-header>
+          <mat-card-title>
+            Bar Graph Example
+          </mat-card-title>
+        </mat-card-header>
+    
+        <mat-card-content class="dashboard-card-content">
+          <div><app-bar-graph></app-bar-graph></div>
+        </mat-card-content>
+      
+      </mat-card>
+    </mat-grid-tile>
+    
+    <mat-grid-tile colspan="2" rowspan="2">
+      <mat-card class="dashboard-card">
+    
+        <mat-card-header>
+          <mat-card-title>
+            Doughnut Chart
+          </mat-card-title>
+        </mat-card-header>
+    
+        <mat-card-content class="dashboard-card-content">
+          <div><app-donut-chart></app-donut-chart></div>
+        </mat-card-content>
+      
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-card class="dashboard-card">
+    
+        <mat-card-header>
+          <mat-card-title>
+            Pie Chart Example
+          </mat-card-title>
+        </mat-card-header>
+    
+        <mat-card-content class="dashboard-card-content">
+          <div><app-pie-chart></app-pie-chart></div>
+        </mat-card-content>
+      
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-card class="dashboard-card">
+    
+        <mat-card-header>
+          <mat-card-title>
+            Radar Example
+          </mat-card-title>
+        </mat-card-header>
+    
+        <mat-card-content class="dashboard-card-content">
+          <div><app-radar-chart></app-radar-chart></div>
+        </mat-card-content>
+      
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2" rowspan="2">
+      <mat-card class="dashboard-card">
+    
+        <mat-card-header>
+          <mat-card-title>
+            Line Chart Example
+          </mat-card-title>
+        </mat-card-header>
+    
+        <mat-card-content class="dashboard-card-content">
+          <div><app-line-chart></app-line-chart></div>
+        </mat-card-content>
+      
+      </mat-card>
+    </mat-grid-tile>
+
+
+
+  </mat-grid-list>
+</div> -->

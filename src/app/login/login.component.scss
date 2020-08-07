@@ -1,0 +1,83 @@
+.mat-card{
+    margin-top: 10vh;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding-top: 5vh;
+    padding-bottom: 7vh;
+}
+
+.mat-form-field{
+    width: 100%;
+    padding-top: 0vh;
+}
+
+button{
+    width: 100%;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    text-align: center;
+}
+
+.registerButton{
+    width: 24%; 
+    margin-left: 38%; 
+    margin-right: 38%; 
+    margin-bottom: 5vh;
+}
+
+form{
+    padding: 5%;
+}
+
+@media (max-width: 1300px){
+    .mat-card{
+        margin-top: 6vh;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    tr{
+        display: grid;
+        width: 100%;
+    }
+
+    table{
+        display: block;
+    }
+
+    .registerButton{
+        width: 30%; 
+        margin-left: 35%; 
+        margin-right: 35%; 
+        margin-bottom: 5vh;
+    }
+}
+
+@media (max-width: 755px){
+    .mat-card{
+        margin-top: 6vh;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    .registerButton{
+        width: 50%; 
+        margin-left: 25%; 
+        margin-right: 25%; 
+        margin-bottom: 5vh;
+    }
+}
+
+@media (max-width: 420px){
+    .mat-card{    
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-top: 5vh;
+    }
+
+    .registerButton{
+        width: 90%; 
+        margin-left: 5%; 
+        margin-right: 5%; 
+        margin-bottom: 5vh;
+    }
+}

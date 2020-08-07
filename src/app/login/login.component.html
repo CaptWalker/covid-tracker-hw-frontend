@@ -1,0 +1,26 @@
+<mat-card class="mat-elevation-z4">
+    <h1 style="text-align: center; padding-bottom: 5vh;">Login</h1>
+    <form [formGroup]="loginForm" [style.fontSize.px]="14">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="xyz@abc.com" formControlName="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-checkbox class="example-margin" formControlName="docStatus">For Doctor Login Please Enable</mat-checkbox>
+        <button type="submit" mat-raised-button color="primary" [style.fontSize.px]="16" (click)="callLogin(loginForm.value)">Login</button>
+        <button type="reset" mat-raised-button color="warn" [style.fontSize.px]="16" (click)="loginForm.reset()">Cancel</button>
+    </form>
+</mat-card>
+<div style="" class="registerButton">
+    <a>
+        <button mat-raised-button [routerLink]="'/home/register'" style="text-align: center;">Not a User! Register Here.</button>
+    </a>
+</div>
+
+
