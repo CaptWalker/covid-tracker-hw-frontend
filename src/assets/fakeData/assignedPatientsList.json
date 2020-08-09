@@ -1,0 +1,12 @@
+[
+    "data": [
+        {
+            "id": "P101",
+            "firstName": "John",
+            "lastName": "Snow",
+            "email": "john.snow@gmail.com",
+            "password": "JohnSnow",
+            
+        }
+    ]
+]

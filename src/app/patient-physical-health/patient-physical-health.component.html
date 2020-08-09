@@ -7,15 +7,23 @@
                 <td>
                     <mat-form-field appearance="outline">
                         <mat-label>Height</mat-label>
-                        <input type="number" matInput placeholder="in cm" formControlName="height">
+                        <input type="number" matInput placeholder="in cm" formControlName="heightCm">
                     </mat-form-field>
                 </td>
                 <td>
                     <mat-form-field appearance="outline">
                         <mat-label>Weight</mat-label>
-                        <input type="number" matInput placeholder="in kg" formControlName="weight">
+                        <input type="number" matInput placeholder="in kg" formControlName="weightKg">
                     </mat-form-field>
                 </td>
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Age</mat-label>
+                        <input type="number" matInput placeholder="Age" formControlName="age">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
                 <td>
                     <mat-form-field appearance="outline">
                         <mat-label>Travel in last 15 days</mat-label>
@@ -68,33 +76,189 @@
 
         <mat-form-field appearance="outline">
             <mat-label>Quarantine In Last 15 Days</mat-label>
-            <input type="number" matInput placeholder="in kg" formControlName="quarantineIn15Days">
+            <input type="number" matInput placeholder="Quarantine In Last 15 Days" formControlName="quarantineIn15Days">
         </mat-form-field>
 
-        <mat-checkbox (click)="symptomStatusToggle()"><h3 style="margin: 0 0 0 0 !important;">Any Symptoms</h3></mat-checkbox>
+        <mat-checkbox (click)="symptomStatusToggle()"><h3 style="margin: 0 0 0 0 !important;">Any Covid-19 related symptoms</h3></mat-checkbox>
 
         <h3 *ngIf="symptomStatus">Symptoms</h3>
         <div *ngIf="symptomStatus">
-            <li *ngFor="let check of symptomsList"><mat-checkbox (change)="onSymptomsChange(check.id)" [checked]="check.checked" >{{check.symptom}}</mat-checkbox></li>
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Cough</mat-label>
+                            <mat-select formControlName="cough">
+                                <mat-option value="Y">
+                                    Yes
+                                </mat-option>
+                                <mat-option value="N">
+                                    No
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Cold</mat-label>
+                            <mat-select formControlName="cold">
+                                <mat-option value="Y">
+                                    Yes
+                                </mat-option>
+                                <mat-option value="N">
+                                    No
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Throat Pain</mat-label>
+                            <mat-select formControlName="throatPain">
+                                <mat-option value="Y">
+                                    Yes
+                                </mat-option>
+                                <mat-option value="N">
+                                    No
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                
+            </table>
         </div>
-    
+        
         <h3 style="margin-top: 1rem !important;">Existing Disease</h3>
         <div>
-            <li *ngFor="let check of existingDiseaseList"><mat-checkbox (change)="onExistingDiseaseChange(check.id)" [checked]="check.checked" [disabled]="isDisabled">{{check.disease}}</mat-checkbox></li>
-            <li><mat-checkbox (change)="onExistingDiseaseChangeNone()">None</mat-checkbox></li>
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Blood Pressure</mat-label>
+                            <mat-select formControlName="bloodPressure">
+                                <mat-option value="Y">
+                                    Yes
+                                </mat-option>
+                                <mat-option value="N">
+                                    No
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Diabetes</mat-label>
+                            <mat-select formControlName="diabetes">
+                                <mat-option value="Y">
+                                    Yes
+                                </mat-option>
+                                <mat-option value="N">
+                                    No
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Lung Disease</mat-label>
+                            <mat-select formControlName="lungDisease">
+                                <mat-option value="Y">
+                                    Yes
+                                </mat-option>
+                                <mat-option value="N">
+                                    No
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Heart Patient</mat-label>
+                            <mat-select formControlName="heartPatient">
+                                <mat-option value="Y">
+                                    Yes
+                                </mat-option>
+                                <mat-option value="N">
+                                    No
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
         </div>
-    
+
         <h3 style="margin-top: 1rem !important;">Medical History</h3>
         <div>
-            <li *ngFor="let medical of medicalHistoryList"><mat-checkbox (change)="onMedicalHistoryChange(medical.id)" [checked]="medical.checked">{{medical.history}}</mat-checkbox></li>
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Bone Fracture</mat-label>
+                            <mat-select formControlName="boneFracture">
+                                <mat-option value="Y">
+                                    Yes
+                                </mat-option>
+                                <mat-option value="N">
+                                    No
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Accidental History</mat-label>
+                            <mat-select formControlName="accidentalHistory">
+                                <mat-option value="Y">
+                                    Yes
+                                </mat-option>
+                                <mat-option value="N">
+                                    No
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
         </div>
-
+        
         <h3 style="margin-top: 1rem !important;">Habits</h3>
         <div>
-            <li *ngFor="let habits of habitsList"><mat-checkbox (change)="onHabitsChange(habits.id)" [checked]="habits.checked">{{habits.habit}}</mat-checkbox></li>
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Work Type</mat-label>
+                            <mat-select formControlName="workType">
+                                <mat-option value="Physical">
+                                    Physical
+                                </mat-option>
+                                <mat-option value="Official">
+                                    Official
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Junk Food Consumption Frequency (Rate 1 - 21 per week)</mat-label>
+                            <input type="number" matInput placeholder="between 1 - 21" formControlName="junkFoodConsumptionFreq" min="1" max="21" value="1">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Exercise Duration Per Day</mat-label>
+                            <input type="number" matInput placeholder="in hours" formControlName="exerciseDurationPerDay">
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
         </div>
-
-        <mat-checkbox (click)="medicalInsuranceToggle()"><h3 style="margin: 1rem 0 0 0 !important;">Medical Insurance</h3>Select if you have Medical Insurance</mat-checkbox>
+        <br>
+        <mat-checkbox formControlName="medicalInsurance"><h3 style="margin: 1rem 0 0 0 !important;">Medical Insurance</h3>Select if you have Medical Insurance</mat-checkbox>
         <br>
         <mat-checkbox (click)="agreementToggle()"><h3 style="margin: 1rem 0 0 0 !important;">I AGREE</h3> The information i have provided is correct</mat-checkbox>
 
