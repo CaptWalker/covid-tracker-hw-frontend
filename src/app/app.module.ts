@@ -38,6 +38,7 @@ import { AssignedPatientListComponent } from './assigned-patient-list/assigned-p
 import { UnassignedPatientListComponent } from './unassigned-patient-list/unassigned-patient-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +80,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatCheckboxModule,
     MatSelectModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

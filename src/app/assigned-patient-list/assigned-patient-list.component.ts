@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { AssignedPatientListService } from './assigned-patient-list-service.service';
 
 @Component({
   selector: 'app-assigned-patient-list',
@@ -12,11 +13,21 @@ export class AssignedPatientListComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
+  constructor( private service: AssignedPatientListService) { }
+
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
+    this.getAssignedPatientsList();
   }
+
+  getAssignedPatientsList = () => {
+    this.service.getListOfPatient().subscribe((response) => {
+      console.log(response);
+    });
+  }
+
 }
 
 export interface PeriodicElement {
@@ -48,3 +59,4 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
   {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
 ];
+
