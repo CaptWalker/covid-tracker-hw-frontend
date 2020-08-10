@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npx ng serve",
+    "start": "npm install -g @angular/cli && npm link @angular/cli && ng serve",
     "build": "ng build --aot --configuration=production --base-href=/covid19-tracker/ --outputPath=dist/covid19-tracker/ --delete-output-path",
     "test": "ng test",
     "lint": "ng lint",
