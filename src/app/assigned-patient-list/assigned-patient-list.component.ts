@@ -19,7 +19,7 @@ export class AssignedPatientListComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
-    this.getAssignedPatientsList();
+    //this.getAssignedPatientsList();
   }
 
   getAssignedPatientsList = () => {

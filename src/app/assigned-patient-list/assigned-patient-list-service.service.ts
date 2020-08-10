@@ -12,7 +12,7 @@ export class AssignedPatientListService {
   constructor(private http: HttpClient) { }
 
   getListOfPatient = () => {
-    return this.http.get('https://localhost:4200/assets/fakeData/assignedPatientsList.json', {responseType: 'json'})
+    return this.http.get('../../assets/fakeData/assignedPatientsList.json', {responseType: 'json'})
     .pipe(
       map((response: Observable<any>) => response),
       catchError(this.handleError)
