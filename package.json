@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm install -g @angular/cli && npm link @angular/cli && ng serve",
-    "build": "ng build --aot --configuration=production --base-href=/covid19-tracker/ --outputPath=dist/covid19-tracker/ --delete-output-path",
+    "start": "ng serve",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
