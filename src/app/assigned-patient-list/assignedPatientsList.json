@@ -1,0 +1,228 @@
+{
+    "data": [
+        {
+            "id": "P101",
+            "firstName": "John",
+            "lastName": "Snow",
+            "email": "john.snow@gmail.com",
+            "password": "JohnSnow",
+            "dateOfBirth": "1990-03-30",
+            "mobileNo": "9876543210",
+            "aadhar": "999988887777",
+            "address": {
+                "address1": "H No 22, 6th lane",
+                "address2": "Gandhi Colony",
+                "city": "Mumbai",
+                "pincode": "400004",
+                "state": "Maharashtra"
+            },
+            "patientPhysicalAndMedicalDetails": {
+                "weightKg": 80, 						
+                "heightCm": "5.9",
+                "travelIn15Days": "true",
+                "age": 30,
+                "travelDetail": [
+                    {
+                        "dateOfTravel": "12-10-2019",
+                        "fromPlace": "chandigarh",
+                        "toPlace": "Dehradun",
+                   		"stayDurationInDay": 4
+                    },
+                    {
+                        "dateOfTravel": "12-10-2019",
+                        "fromPlace": "chandigarh",
+                        "toPlace": "Dehradun",
+                   		"stayDurationInDay": 4
+                    }
+                ],
+                "quarantineIn15Days": "true",
+                "bodyMassIndex": 21,
+                "symptoms": "Y", 
+                "cough": "Y",                
+                "cold": "N",
+                "throatPain": "Y",
+                "bloodPressure": "Y",
+                "diabetes": "Y",
+                "lungDisease": "Y",
+                "heartPatient": "Y",
+                "boneFracture": "Y",
+                "accidentalHistory": "Y",
+                "workType": "labour",
+                "junkFoodConsumptionFreq": 2,
+                "exerciseDurationPerday": 3,
+                "medicalInsurance": "true",      
+                "doctorDetailDTO":{
+                    "doctorId": "D101"
+                }
+            }
+        },
+        {
+            "id": "P102",
+            "firstName": "John 1",
+            "lastName": "Snow 1",
+            "email": "john.snow@gmail.com",
+            "password": "JohnSnow",
+            "dateOfBirth": "1990-03-30",
+            "mobileNo": "9876543210",
+            "aadhar": "999988887777",
+            "address": {
+                "address1": "H No 22, 6th lane",
+                "address2": "Gandhi Colony",
+                "city": "Mumbai",
+                "pincode": "400004",
+                "state": "Maharashtra"
+            },
+            "patientPhysicalAndMedicalDetails": {
+                "weightKg": 80, 						
+                "heightCm": "5.9",
+                "travelIn15Days": "true",
+                "age": 30,
+                "travelDetail": [
+                    {
+                        "dateOfTravel": "12-10-2019",
+                        "fromPlace": "chandigarh",
+                        "toPlace": "Dehradun",
+                   		"stayDurationInDay": 4
+                    },
+                    {
+                        "dateOfTravel": "12-10-2019",
+                        "fromPlace": "chandigarh",
+                        "toPlace": "Dehradun",
+                   		"stayDurationInDay": 4
+                    }
+                ],
+                "quarantineIn15Days": "true",
+                "bodyMassIndex": 21,
+                "symptoms": "Y", 
+                "cough": "Y",                
+                "cold": "N",
+                "throatPain": "Y",
+                "bloodPressure": "Y",
+                "diabetes": "Y",
+                "lungDisease": "Y",
+                "heartPatient": "Y",
+                "boneFracture": "Y",
+                "accidentalHistory": "Y",
+                "workType": "labour",
+                "junkFoodConsumptionFreq": 2,
+                "exerciseDurationPerday": 3,
+                "medicalInsurance": "true",      
+                "doctorDetailDTO":{
+                    "doctorId": "D101"
+                }
+            }
+        },
+        {
+            "id": "P103",
+            "firstName": "John 3",
+            "lastName": "Snow 3",
+            "email": "john.snow@gmail.com",
+            "password": "JohnSnow",
+            "dateOfBirth": "1990-03-30",
+            "mobileNo": "9876543210",
+            "aadhar": "999988887777",
+            "address": {
+                "address1": "H No 22, 6th lane",
+                "address2": "Gandhi Colony",
+                "city": "Mumbai",
+                "pincode": "400004",
+                "state": "Maharashtra"
+            },
+            "patientPhysicalAndMedicalDetails": {
+                "weightKg": 80, 						
+                "heightCm": "5.9",
+                "travelIn15Days": "true",
+                "age": 30,
+                "travelDetail": [
+                    {
+                        "dateOfTravel": "12-10-2019",
+                        "fromPlace": "chandigarh",
+                        "toPlace": "Dehradun",
+                   		"stayDurationInDay": 4
+                    },
+                    {
+                        "dateOfTravel": "12-10-2019",
+                        "fromPlace": "chandigarh",
+                        "toPlace": "Dehradun",
+                   		"stayDurationInDay": 4
+                    }
+                ],
+                "quarantineIn15Days": "true",
+                "bodyMassIndex": 21,
+                "symptoms": "Y", 
+                "cough": "Y",                
+                "cold": "N",
+                "throatPain": "Y",
+                "bloodPressure": "Y",
+                "diabetes": "Y",
+                "lungDisease": "Y",
+                "heartPatient": "Y",
+                "boneFracture": "Y",
+                "accidentalHistory": "Y",
+                "workType": "labour",
+                "junkFoodConsumptionFreq": 2,
+                "exerciseDurationPerday": 3,
+                "medicalInsurance": "true",      
+                "doctorDetailDTO":{
+                    "doctorId": "D101"
+                }
+            }
+        },
+        {
+            "id": "P104",
+            "firstName": "John 4",
+            "lastName": "Snow 4",
+            "email": "john.snow@gmail.com",
+            "password": "JohnSnow",
+            "dateOfBirth": "1990-03-30",
+            "mobileNo": "9876543210",
+            "aadhar": "999988887777",
+            "address": {
+                "address1": "H No 22, 6th lane",
+                "address2": "Gandhi Colony",
+                "city": "Mumbai",
+                "pincode": "400004",
+                "state": "Maharashtra"
+            },
+            "patientPhysicalAndMedicalDetails": {
+                "weightKg": 80, 						
+                "heightCm": "5.9",
+                "travelIn15Days": "true",
+                "age": 30,
+                "travelDetail": [
+                    {
+                        "dateOfTravel": "12-10-2019",
+                        "fromPlace": "chandigarh",
+                        "toPlace": "Dehradun",
+                   		"stayDurationInDay": 4
+                    },
+                    {
+                        "dateOfTravel": "12-10-2019",
+                        "fromPlace": "chandigarh",
+                        "toPlace": "Dehradun",
+                   		"stayDurationInDay": 4
+                    }
+                ],
+                "quarantineIn15Days": "true",
+                "bodyMassIndex": 21,
+                "symptoms": "Y", 
+                "cough": "Y",                
+                "cold": "N",
+                "throatPain": "Y",
+                "bloodPressure": "Y",
+                "diabetes": "Y",
+                "lungDisease": "Y",
+                "heartPatient": "Y",
+                "boneFracture": "Y",
+                "accidentalHistory": "Y",
+                "workType": "labour",
+                "junkFoodConsumptionFreq": 2,
+                "exerciseDurationPerday": 3,
+                "medicalInsurance": "true",      
+                "doctorDetailDTO":{
+                    "doctorId": "D101"
+                }
+            }
+        }
+    ]
+}

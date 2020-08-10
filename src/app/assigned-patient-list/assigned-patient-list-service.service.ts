@@ -11,10 +11,10 @@ export class AssignedPatientListService {
 
   constructor(private http: HttpClient) { }
 
-  getListOfPatient = () => {
-    return this.http.get('../../assets/fakeData/assignedPatientsList.json', {responseType: 'json'})
+  getListOfPatient = (): Observable<any> => {
+    return this.http.get('./assignedPatientsList.json')
     .pipe(
-      map((response: Observable<any>) => response),
+      map((response: any) => response.json()),
       catchError(this.handleError)
     );
   }

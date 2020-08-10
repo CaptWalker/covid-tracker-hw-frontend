@@ -232,7 +232,7 @@ export class PatientPhysicalHealthComponent implements OnInit {
     control.removeAt(i);
   }
 
-  registerHealthAndPhysicalData = (data) => {
+  registerHealthAndPhysicalData = (data) => {         // I have to put patientid physicalData and doctorDetailDTO as a object a for request
     data.junkFoodConsumptionFrequency = data.junkFoodConsumptionFrequency === null ? 1 : data.junkFoodConsumptionFrequency;
     data.bodyMassIndex = (data.weightKg * 100 * 100) / (data.heightCm * data.heightCm);
     data.doctorDetailDTO = { doctorId: null };
