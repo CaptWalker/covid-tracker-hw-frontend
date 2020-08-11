@@ -1,32 +1,48 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
+process.env.CHROME_BIN = require('puppeteer').executablePath();
 
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    frameworks: ['jasmine', 'karma-typescript'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('karma-typescript')
     ],
-    client: {
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+    angularCli: {
+      environment: 'dev'
     },
-    coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, './coverage/covid19-tracker'),
-      reports: ['html', 'lcovonly', 'text-summary'],
-      fixWebpackSourcePaths: true
+    files: [
+      { pattern: "base.spec.ts" },
+      { pattern: "src/**/*.+(ts|html)" }
+    ],
+    karmaTypescriptConfig: {
+            bundlerOptions: {
+                entrypoints: /\.spec\.ts$/,
+                transforms: [
+                    require("karma-typescript-angular2-transform")
+                ]
+            },
+            compilerOptions: {
+                lib: ["ES2015", "DOM"]
+            }
     },
-    reporters: ['progress', 'kjhtml'],
+    preprocessors: {'**/*.ts': 'karma-typescript'
+    },
+    mime: {
+      'text/x-typescript': ['ts', 'tsx']
+    },
+    reporters: ["dots", "karma-typescript"],
     port: 9876,
     colors: true,
+    browserNoActivityTimeout: 80000,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    restartOnFileChange: true
+    autoWatch: false,
+    browsers: ['ChromeHeadless'],
+    singleRun: true
   });
 };
