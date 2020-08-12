@@ -186,11 +186,11 @@ spec:
                     npm run build --if-present
                 '''
             }
-            stage('Test') {
-                sh '''#!/bin/bash
-                    npm test
-                '''
-            }
+            // stage('Test') {
+            //     sh '''#!/bin/bash
+            //         npm test
+            //     '''
+            // }
             stage('Publish pacts') {
                 sh '''#!/bin/bash
                     npm run pact:publish --if-present
