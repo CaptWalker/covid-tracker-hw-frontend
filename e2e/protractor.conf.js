@@ -13,7 +13,10 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    browserName: 'chrome'
+    browserName: 'chrome',
+      chromeOptions: {
+        args: ['--no-sandbox'] //'--headless',
+      }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
@@ -40,7 +43,7 @@ exports.config = {
 // config.capabilities = {
 //   browserName: 'chrome',
 //   chromeOptions: {
-//     args: ['--headless', '--no-sandbox']
+//     args: ['--no-sandbox'] //'--headless',
 //   }
 // };
 
