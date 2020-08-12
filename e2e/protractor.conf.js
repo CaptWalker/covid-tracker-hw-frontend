@@ -36,6 +36,7 @@ exports.config = {
       }
     }));
   }
+  
 };
 
 // const config = require('./protractor.conf').config;
